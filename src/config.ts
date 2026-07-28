@@ -16,13 +16,12 @@ export const siteConfig = {
   skills: [
     "طراحی با هوش مصنوعی (AI)",
     "طراحی گرافیک & برندینگ",
-    "تصویرسازی برداری (Vector)",
-    "طراحی UI/UX",
     "صفحه‌آرایی & کاتالوگ",
     "طراحی پوستر & بروشور",
     "عکاسی & فیلم‌برداری",
     "Photoshop & Illustrator",
     "تایپوگرافی",
+    "تکنیک‌های طراحی و نقاشی دستی",
   ],
   skillCategories: [
     {
@@ -30,22 +29,19 @@ export const siteConfig = {
       skills: [
         { name: "Adobe Photoshop", icon: "palette", level: 90 },
         { name: "Adobe Illustrator", icon: "pen", level: 88 },
-        { name: "Adobe Premiere Pro", icon: "video", level: 75 },
-        { name: "Figma (UI/UX)", icon: "figma", level: 80 },
       ],
     },
     {
       title: "توسعه و هوش مصنوعی",
       skills: [
         { name: "ابزارهای هوش مصنوعی (Gemini, DeepSeek, ChatGPT...)", icon: "brain", level: 85 },
-        { name: "Vibe Coding >_", icon: "terminal", level: 75 },
       ],
     },
     {
       title: "هنر، عکاسی و برندینگ",
       skills: [
+        { name: "تکنیک‌ها و ابزارهای دستی (مدادرنگی، گواش، آبرنگ، پاستل گچی، ذغال، آکریلیک، پاستل روغنی...)", icon: "brush", level: 90 },
         { name: "عکاسی و تصویربرداری تخصصی", icon: "camera", level: 85 },
-        { name: "تصویرسازی برداری (Vector Design)", icon: "vector", level: 90 },
         { name: "صفحه‌آرایی و کاتالوگ (InDesign)", icon: "book", level: 82 },
         { name: "طراحی هویت بصری & پوستر", icon: "sparkles", level: 88 },
       ],
