@@ -247,7 +247,7 @@ export const siteConfig = {
         },
         {
           url: "/images/paintings/painting_2.jpg",
-          caption: "نقاشی منظره معماری ونیز - تکنیک رنگ و آبرنگ",
+          caption: "نقاشی منظره معماری ونیز - تکنیک پاستل گچی",
         },
         {
           url: "/images/paintings/painting_3.png",
