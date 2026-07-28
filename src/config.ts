@@ -42,7 +42,7 @@ export const siteConfig = {
       skills: [
         { name: "تکنیک‌ها و ابزارهای دستی (مدادرنگی، گواش، آبرنگ، پاستل گچی، ذغال، آکریلیک، پاستل روغنی...)", icon: "brush", level: 90 },
         { name: "عکاسی و تصویربرداری تخصصی", icon: "camera", level: 85 },
-        { name: "صفحه‌آرایی و کاتالوگ (InDesign)", icon: "book", level: 82 },
+        { name: "صفحه‌آرایی و طراحی کاتالوگ", icon: "book", level: 82 },
         { name: "طراحی هویت بصری & پوستر", icon: "sparkles", level: 88 },
       ],
     },
@@ -194,12 +194,8 @@ export const siteConfig = {
           url: "/images/editorial/editorial_2.png",
           caption: "دیزاین و فتومونتاژ مفهومی مجله - موضوع: مبارزه زیست‌شناسان با عواقب گرمایش (صفحات ۵ و ۶)",
         },
-        {
-          url: "/images/editorial/editorial_3.jpg",
-          caption: "طراحی جلد و پوستر مفهومی مجله «گرمش» - موضوع: گرمایش جهانی",
-        },
       ],
-      skills: ["صفحه‌آرایی مجله", "InDesign", "Photoshop", "فتومونتاژ", "تایپوگرافی نشریه"],
+      skills: ["صفحه‌آرایی مجله", "Photoshop", "فتومونتاژ", "تایپوگرافی نشریه"],
     },
     {
       name: "طراحی بروشور سه لتی تبلیغاتی (استودیو یوگا و سلامت)",
