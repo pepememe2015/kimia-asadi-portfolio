@@ -311,8 +311,10 @@ const resolveUrl = (url: string) => (!url ? "" : url.startsWith("http") || url.s
             <img
               src={resolveUrl("/images/kimia_portrait_nobg.png")}
               alt="کیمیا اسدی"
-              class="w-[90%] h-[90%] object-contain object-bottom filter drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)] transform group-hover:scale-105 transition-transform duration-500"
+              class="w-[90%] h-[90%] object-contain object-bottom filter drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)] transform group-hover:scale-105 transition-transform duration-500 [mask-image:linear-gradient(to_bottom,black_50%,transparent_95%)] [-webkit-mask-image:linear-gradient(to_bottom,black_50%,transparent_95%)]"
             />
+            <!-- Bottom Soft Blending Gradient Overlay -->
+            <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#4a2e18] via-[#4a2e18]/70 to-transparent pointer-events-none rounded-b-blob z-20"></div>
           </div>
         </div>
       </div>
