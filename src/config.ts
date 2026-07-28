@@ -34,7 +34,7 @@ export const siteConfig = {
     {
       title: "توسعه و هوش مصنوعی",
       skills: [
-        { name: "ابزارهای هوش مصنوعی (Gemini, DeepSeek, ChatGPT...)", icon: "brain", level: 85 },
+        { name: "ابزارهای هوش مصنوعی (Gemini, DeepSeek, ChatGPT...)", icon: "brain", level: 45 },
       ],
     },
     {
