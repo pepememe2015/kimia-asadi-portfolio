@@ -301,17 +301,17 @@ const resolveUrl = (url: string) => (!url ? "" : url.startsWith("http") || url.s
       <div class="lg:col-span-5 flex justify-center items-center order-1 lg:order-2 animate-fade-in animation-delay-300">
         <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 group">
           <!-- Outer Soft Glow -->
-          <div class="absolute -inset-4 bg-gradient-to-tr from-[#805334]/30 via-[#e8c3a1]/50 to-[#633f26]/30 rounded-blob blur-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <div class="absolute -inset-4 bg-gradient-to-tr from-[#805334]/30 via-[#e8c3a1]/50 to-[#633f26]/30 rounded-blob blur-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
           <!-- Organic Animated Blob Shape Background -->
           <div class="absolute inset-0 bg-gradient-to-br from-[#805334] via-[#633f26] to-[#4a2e18] shadow-2xl shadow-[#3b2211]/30 border-2 border-[#e8c3a1]/40 rounded-blob transition-all duration-700 group-hover:scale-[1.02]"></div>
 
           <!-- Cutout Profile Image inside Blob -->
-          <div class="relative z-10 w-full h-full flex items-end justify-center overflow-hidden rounded-blob">
+          <div class="relative z-10 w-full h-full flex items-end justify-center rounded-blob blob-clip p-2">
             <img
               src={resolveUrl("/images/kimia_portrait_nobg.png")}
               alt="کیمیا اسدی"
-              class="w-[94%] h-[94%] object-cover object-top filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.35)] transform group-hover:scale-105 transition-transform duration-500"
+              class="w-[90%] h-[90%] object-contain object-bottom filter drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)] transform group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
@@ -336,6 +336,17 @@ const resolveUrl = (url: string) => (!url ? "" : url.startsWith("http") || url.s
   .rounded-blob {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     animation: morphBlob 10s ease-in-out infinite alternate;
+  }
+
+  .blob-clip {
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    isolation: isolate;
   }
 
   @keyframes morphBlob {
