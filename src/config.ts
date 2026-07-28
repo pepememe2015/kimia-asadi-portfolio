@@ -49,12 +49,17 @@ export const siteConfig = {
           url: "/images/cafe_panda/business_card.jpg",
           caption: "طراحی کارت ویزیت، آدرس و اطلاعات تماس کافه پاندا",
         },
+        {
+          url: "/images/cafe_panda/invoice.jpg",
+          caption: "طراحی برگ فاکتور و صورت‌حساب اختصاصی کافه پاندا",
+        },
       ],
       skills: [
         "طراحی هویت بصری",
         "طراحی لوگو",
         "برندینگ کافه",
         "طراحی منو",
+        "طراحی فاکتور",
         "کارت ویزیت",
         "Illustrator",
         "Photoshop",
