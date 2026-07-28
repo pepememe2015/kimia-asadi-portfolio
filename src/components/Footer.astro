@@ -1,0 +1,126 @@
+---
+import { siteConfig } from "../config";
+
+const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
+const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+---
+
+<footer class="relative bg-[#2e190d] border-t border-[#805334]/30 text-[#e8c3a1] w-full mt-12 sm:mt-20">
+  <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8 w-full">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+      
+      <!-- Brand & Social -->
+      <div class="flex flex-col gap-3">
+        <h3 class="text-2xl font-bold text-white tracking-wide">
+          {siteConfig.name}
+        </h3>
+        <p class="text-sm sm:text-base text-[#d7af8c] font-medium max-w-md leading-relaxed">
+          {siteConfig.title}
+        </p>
+        
+        <!-- Social Icons -->
+        <div class="flex items-center gap-3 mt-2">
+          {siteConfig.social?.email && (
+            <a
+              href={`mailto:${siteConfig.social.email}`}
+              aria-label="Email"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-[#805334]/30 hover:bg-[#805334] text-[#e8c3a1] hover:text-white border border-[#805334]/40 transition-all duration-300 shadow-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                <path d="M3 7l9 6l9 -6"></path>
+              </svg>
+            </a>
+          )}
+          {siteConfig.social?.telegram && (
+            <a
+              href={siteConfig.social.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-[#805334]/30 hover:bg-[#805334] text-[#e8c3a1] hover:text-white border border-[#805334]/40 transition-all duration-300 shadow-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
+              </svg>
+            </a>
+          )}
+          {siteConfig.social?.linkedin && (
+            <a
+              href={siteConfig.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-[#805334]/30 hover:bg-[#805334] text-[#e8c3a1] hover:text-white border border-[#805334]/40 transition-all duration-300 shadow-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 11v5"></path>
+                <path d="M8 8v.01"></path>
+                <path d="M12 16v-5"></path>
+                <path d="M16 16v-3a2 2 0 1 0 -4 0"></path>
+                <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path>
+              </svg>
+            </a>
+          )}
+          {siteConfig.social?.twitter && (
+            <a
+              href={siteConfig.social.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-[#805334]/30 hover:bg-[#805334] text-[#e8c3a1] hover:text-white border border-[#805334]/40 transition-all duration-300 shadow-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+          )}
+          {siteConfig.social?.github && (
+            <a
+              href={siteConfig.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-[#805334]/30 hover:bg-[#805334] text-[#e8c3a1] hover:text-white border border-[#805334]/40 transition-all duration-300 shadow-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+              </svg>
+            </a>
+          )}
+        </div>
+      </div>
+
+      <!-- Navigation & Copyright -->
+      <div class="flex flex-col md:items-end gap-4 border-t md:border-t-0 border-[#805334]/20 pt-6 md:pt-0">
+        <nav class="flex flex-wrap gap-x-6 gap-y-2">
+          <a href="#about" class="text-sm font-medium text-[#e8c3a1]/80 hover:text-white transition-colors duration-200">
+            درباره من
+          </a>
+          {hasProjects && (
+            <a href="#projects" class="text-sm font-medium text-[#e8c3a1]/80 hover:text-white transition-colors duration-200">
+              پروژه‌ها
+            </a>
+          )}
+          {hasExperience && (
+            <a href="#experience" class="text-sm font-medium text-[#e8c3a1]/80 hover:text-white transition-colors duration-200">
+              سوابق کاری
+            </a>
+          )}
+          {hasEducation && (
+            <a href="#education" class="text-sm font-medium text-[#e8c3a1]/80 hover:text-white transition-colors duration-200">
+              تحصیلات
+            </a>
+          )}
+        </nav>
+        
+        <p class="text-xs sm:text-sm text-[#d7af8c]/70 font-medium">
+          © {new Date().getFullYear()} {siteConfig.name}. تمامی حقوق محفوظ است.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</footer>

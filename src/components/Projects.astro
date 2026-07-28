@@ -1,0 +1,276 @@
+---
+import { siteConfig } from "../config";
+const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+---
+
+{
+  hasProjects && (
+    <section id="projects" class="p-6 sm:p-10 md:p-16 lg:p-20 w-full">
+      <div class="max-w-7xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#3b2211]">
+              پروژه‌ها
+            </h2>
+            <div
+              class="w-[75px] h-[5px] mt-2 rounded-full"
+              style={`background-color: ${siteConfig.accentColor}`}
+            />
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="space-y-8">
+              {siteConfig.projects.map((project, index) => {
+                const Component = project.link ? "a" : "div";
+                const linkProps = project.link
+                  ? {
+                      href: project.link,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    }
+                  : {};
+
+                return (
+                  <div class="group relative">
+                    <Component
+                      {...linkProps}
+                      class={`block relative p-4 sm:p-6 md:p-8 bg-[#e8c3a1]/60 rounded-xl sm:rounded-2xl border border-[#805334]/25 shadow-sm transition-all duration-300 ${
+                        project.link
+                          ? "hover:bg-[#e4b993] hover:shadow-xl hover:border-[#805334]/40 hover:-translate-y-1"
+                          : ""
+                      }`}
+                    >
+                      {project.link && (
+                        <div class="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center bg-[#805334] rounded-full text-white transition-all duration-300 group-hover:bg-[#633f26]">
+                          <svg
+                            class="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M17 17L7 7M7 7H17M7 7V17"
+                            />
+                          </svg>
+                        </div>
+                      )}
+
+                      <div class="space-y-4">
+                        <div>
+                          <span
+                            class="text-sm font-mono font-bold"
+                            style={{ color: siteConfig.accentColor }}
+                          >
+                            ۰{index + 1}
+                          </span>
+                          <h3 class="text-xl sm:text-2xl font-bold text-[#3b2211] mt-1">
+                            {project.name}
+                          </h3>
+                        </div>
+
+                        <p
+                          class={`text-base sm:text-lg text-[#5c3a22] font-medium leading-relaxed ${project.link ? "pl-12 sm:pl-14 md:pl-16" : ""}`}
+                        >
+                          {project.description}
+                        </p>
+
+                        {project.images && project.images.length > 0 && (
+                          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
+                            {project.images.map((imgObj: any, imgIdx: number) => (
+                              <div
+                                class="lightbox-trigger group/img relative overflow-hidden rounded-xl border border-[#805334]/20 shadow-sm bg-[#d7af8c] cursor-pointer"
+                                data-img-src={typeof imgObj === "string" ? imgObj : imgObj.url}
+                                data-img-title={`${project.name} (تصویر ۰${imgIdx + 1})`}
+                                data-img-caption={typeof imgObj === "object" ? imgObj.caption || "" : ""}
+                              >
+                                <img
+                                  src={typeof imgObj === "string" ? imgObj : imgObj.url}
+                                  alt={`${project.name} ${imgIdx + 1}`}
+                                  class="w-full h-60 sm:h-72 object-cover object-top transition-transform duration-500 group-hover/img:scale-105"
+                                />
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 text-white text-xs font-medium flex items-center justify-between">
+                                  <span class="truncate">{typeof imgObj === "object" && imgObj.caption ? imgObj.caption : `تصویر ۰${imgIdx + 1}`}</span>
+                                  <span class="text-[10px] bg-white/20 px-2 py-1 rounded-full backdrop-blur-sm shrink-0 mr-1 flex items-center gap-1">
+                                    <svg class="w-3 h-3 text-[#d7af8c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                                  </span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {(project.image || project.certificate) && (
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            {project.image && (
+                              <div
+                                class="lightbox-trigger group/img relative overflow-hidden rounded-xl border border-[#805334]/20 shadow-sm bg-[#d7af8c] cursor-pointer"
+                                data-img-src={project.image}
+                                data-img-title={project.name}
+                                data-img-caption="اثر عکاسی ارائه شده در نمایشگاه دانشکده هنر"
+                              >
+                                <img
+                                  src={project.image}
+                                  alt={project.name}
+                                  class="w-full h-64 sm:h-72 object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                />
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 text-white text-xs font-medium flex items-center justify-between">
+                                  <span class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-[#d7af8c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    اثر عکاسی ارائه شده
+                                  </span>
+                                  <span class="text-[10px] bg-white/20 px-2.5 py-1 rounded-full backdrop-blur-sm flex items-center gap-1">
+                                    <svg class="w-3 h-3 text-[#d7af8c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                                    بزرگنمایی
+                                  </span>
+                                </div>
+                              </div>
+                            )}
+                            {project.certificate && (
+                              <div
+                                class="lightbox-trigger group/img relative overflow-hidden rounded-xl border border-[#805334]/20 shadow-sm bg-[#d7af8c] cursor-pointer"
+                                data-img-src={project.certificate}
+                                data-img-title="گواهی‌نامه رسمی نمایشگاه"
+                                data-img-caption="گواهی‌نامه شرکت در نمایشگاه گروه ارتباط تصویری دانشکده هنر تهران مرکز"
+                              >
+                                <img
+                                  src={project.certificate}
+                                  alt="گواهی‌نامه شرکت در نمایشگاه"
+                                  class="w-full h-64 sm:h-72 object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                />
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 text-white text-xs font-medium flex items-center justify-between">
+                                  <span class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-[#d7af8c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                                    گواهی‌نامه رسمی نمایشگاه
+                                  </span>
+                                  <span class="text-[10px] bg-white/20 px-2.5 py-1 rounded-full backdrop-blur-sm flex items-center gap-1">
+                                    <svg class="w-3 h-3 text-[#d7af8c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                                    بزرگنمایی
+                                  </span>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {project.skills && project.skills.length > 0 && (
+                          <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
+                            {project.skills.map((skill) => (
+                              <span
+                                class="px-3 py-1.5 bg-[#805334] text-white rounded-md sm:rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 hover:bg-[#633f26] shadow-sm"
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </Component>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div
+        id="lightbox-modal"
+        dir="ltr"
+        class="fixed inset-0 z-[100] hidden w-full h-full flex-col items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-md transition-opacity duration-300 opacity-0 overflow-y-auto"
+      >
+        <button
+          id="lightbox-close"
+          class="absolute top-4 left-4 sm:top-6 sm:left-6 text-white/90 hover:text-white bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 z-50 cursor-pointer shadow-lg hover:scale-110"
+          aria-label="بستن"
+        >
+          <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div class="relative w-full max-w-4xl max-h-[85vh] flex flex-col items-center justify-center mx-auto my-auto p-2">
+          <img
+            id="lightbox-target"
+            src=""
+            alt=""
+            class="max-h-[70vh] max-w-full w-auto h-auto object-contain rounded-xl shadow-2xl border border-white/20 mx-auto"
+          />
+          <div class="mt-4 text-center text-white space-y-1 w-full" dir="rtl">
+            <h4 id="lightbox-title" class="text-lg sm:text-xl font-bold"></h4>
+            <p id="lightbox-caption" class="text-xs sm:text-sm text-gray-300"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("lightbox-modal");
+    const targetImg = document.getElementById("lightbox-target") as HTMLImageElement;
+    const titleEl = document.getElementById("lightbox-title");
+    const captionEl = document.getElementById("lightbox-caption");
+    const closeBtn = document.getElementById("lightbox-close");
+
+    const triggers = document.querySelectorAll(".lightbox-trigger");
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const src = trigger.getAttribute("data-img-src");
+        const title = trigger.getAttribute("data-img-title");
+        const caption = trigger.getAttribute("data-img-caption");
+
+        if (src && targetImg && modal) {
+          targetImg.src = src;
+          if (titleEl) titleEl.textContent = title || "";
+          if (captionEl) captionEl.textContent = caption || "";
+
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          document.body.style.overflow = "hidden";
+
+          setTimeout(() => {
+            modal.classList.remove("opacity-0");
+            modal.classList.add("opacity-100");
+          }, 10);
+        }
+      });
+    });
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.remove("opacity-100");
+        modal.classList.add("opacity-0");
+        document.body.style.overflow = "";
+
+        setTimeout(() => {
+          modal.classList.remove("flex");
+          modal.classList.add("hidden");
+          if (targetImg) targetImg.src = "";
+        }, 300);
+      }
+    }
+
+    closeBtn?.addEventListener("click", closeModal);
+
+    modal?.addEventListener("click", (e) => {
+      if (e.target === modal || (e.target as HTMLElement).closest("#lightbox-close")) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+        closeModal();
+      }
+    });
+  });
+</script>

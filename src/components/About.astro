@@ -1,0 +1,40 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="about" class="p-6 sm:p-10 md:p-16 lg:p-20 w-full">
+  <div class="max-w-7xl mx-auto w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+      <div class="lg:col-span-4">
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#3b2211]"
+        >
+          درباره من
+        </h2>
+        <div
+          class="w-[75px] h-[5px] mt-2 rounded-full"
+          style={`background-color: ${siteConfig.accentColor}`}
+        >
+        </div>
+      </div>
+
+      <div class="lg:col-span-8 space-y-8">
+        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-[#5c3a22] font-medium">
+          {siteConfig.aboutMe}
+        </p>
+
+        <div class="pt-4">
+          <div class="flex flex-wrap gap-3">
+            {
+              siteConfig.skills.map((skill) => (
+                <span class="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#805334]/15 text-[#805334] border border-[#805334]/30 rounded-full text-sm sm:text-base md:text-lg font-bold hover:bg-[#805334] hover:text-white transition-all duration-300 shadow-sm">
+                  {skill}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
