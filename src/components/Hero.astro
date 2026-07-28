@@ -132,171 +132,191 @@ import { siteConfig } from "../config";
   </svg>
 
   <div class="max-w-7xl mx-auto w-full px-6 sm:px-12 md:px-16 lg:px-24 flex-1 flex flex-col justify-between pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16">
-    <div class="my-auto py-8">
-      <h1
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#3b2211] animate-fade-in animation-delay-200"
-      >
-        من <span style={{ color: siteConfig.accentColor }}
-          >{siteConfig.name}</span
-        > هستم
-      </h1>
-      <p
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-semibold text-[#5c3a22] animate-fade-in animation-delay-400 max-w-3xl"
-      >
-        {siteConfig.title}
-      </p>
-    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto py-6">
+      
+      <!-- Intro Text Column (Right in RTL) -->
+      <div class="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
+        <h1
+          class="mt-2 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#3b2211] animate-fade-in animation-delay-200"
+        >
+          من <span style={{ color: siteConfig.accentColor }}
+            >{siteConfig.name}</span
+          > هستم
+        </h1>
+        <p
+          class="mt-4 sm:mt-6 text-pretty text-base sm:text-lg md:text-xl/8 font-semibold text-[#5c3a22] animate-fade-in animation-delay-400 max-w-2xl leading-relaxed"
+        >
+          {siteConfig.title}
+        </p>
 
-    <div
-      class="pt-6 flex gap-x-5 sm:gap-x-6 md:gap-x-8 text-gray-700 animate-fade-in animation-delay-600"
-    >
-    {
-      siteConfig.social?.email && (
-        <a
-          href={`mailto:${siteConfig.social.email}`}
-          aria-label="Email"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
+        <!-- Social Icons -->
+        <div
+          class="pt-6 sm:pt-8 flex gap-x-5 sm:gap-x-6 text-[#5c3a22] animate-fade-in animation-delay-600"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-            <path d="M3 7l9 6l9 -6" />
-          </svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.telegram && (
-        <a
-          href={siteConfig.social.telegram}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Telegram"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-          </svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.linkedin && (
-        <a
-          href={siteConfig.social.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M8 11v5" />
-              <path d="M8 8v.01" />
-              <path d="M12 16v-5" />
-              <path d="M16 16v-3a2 2 0 1 0 -4 0" />
-              <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
-            </>
-          </svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.twitter && (
-        <a
-          href={siteConfig.social.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
-            </>
-          </svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.github && (
-        <a
-          href={siteConfig.social.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-            </>
-          </svg>
-        </a>
-      )
-    }
+          {
+            siteConfig.social?.email && (
+              <a
+                href={`mailto:${siteConfig.social.email}`}
+                aria-label="Email"
+                class="p-2.5 rounded-full bg-[#805334]/15 border border-[#805334]/30 text-[#3b2211] transition-all duration-300 hover:bg-[#805334] hover:text-white hover:scale-110 shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6 sm:h-7 sm:w-7"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+                  <path d="M3 7l9 6l9 -6" />
+                </svg>
+              </a>
+            )
+          }
+          {
+            siteConfig.social?.telegram && (
+              <a
+                href={siteConfig.social.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+                class="p-2.5 rounded-full bg-[#805334]/15 border border-[#805334]/30 text-[#3b2211] transition-all duration-300 hover:bg-[#805334] hover:text-white hover:scale-110 shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6 sm:h-7 sm:w-7"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+                </svg>
+              </a>
+            )
+          }
+          {
+            siteConfig.social?.linkedin && (
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="p-2.5 rounded-full bg-[#805334]/15 border border-[#805334]/30 text-[#3b2211] transition-all duration-300 hover:bg-[#805334] hover:text-white hover:scale-110 shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6 sm:h-7 sm:w-7"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M8 11v5" />
+                  <path d="M8 8v.01" />
+                  <path d="M12 16v-5" />
+                  <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+                  <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+                </svg>
+              </a>
+            )
+          }
+          {
+            siteConfig.social?.twitter && (
+              <a
+                href={siteConfig.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                class="p-2.5 rounded-full bg-[#805334]/15 border border-[#805334]/30 text-[#3b2211] transition-all duration-300 hover:bg-[#805334] hover:text-white hover:scale-110 shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6 sm:h-7 sm:w-7"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                </svg>
+              </a>
+            )
+          }
+          {
+            siteConfig.social?.github && (
+              <a
+                href={siteConfig.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                class="p-2.5 rounded-full bg-[#805334]/15 border border-[#805334]/30 text-[#3b2211] transition-all duration-300 hover:bg-[#805334] hover:text-white hover:scale-110 shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6 sm:h-7 sm:w-7"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                </svg>
+              </a>
+            )
+          }
+        </div>
+      </div>
+
+      <!-- Organic Blob Avatar Profile Column (Left in RTL) -->
+      <div class="lg:col-span-5 flex justify-center items-center order-1 lg:order-2 animate-fade-in animation-delay-300">
+        <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 group">
+          <!-- Outer Soft Glow -->
+          <div class="absolute -inset-4 bg-gradient-to-tr from-[#805334]/30 via-[#e8c3a1]/50 to-[#633f26]/30 rounded-blob blur-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+          <!-- Organic Animated Blob Shape Background -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[#805334] via-[#633f26] to-[#4a2e18] shadow-2xl shadow-[#3b2211]/30 border-2 border-[#e8c3a1]/40 rounded-blob transition-all duration-700 group-hover:scale-[1.02]"></div>
+
+          <!-- Cutout Profile Image inside Blob -->
+          <div class="relative z-10 w-full h-full flex items-end justify-center overflow-hidden rounded-blob">
+            <img
+              src="/images/kimia_portrait_nobg.png"
+              alt="کیمیا اسدی"
+              class="w-[94%] h-[94%] object-cover object-top filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.35)] transform group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
 </div>
 
 <style>
@@ -311,6 +331,23 @@ import { siteConfig } from "../config";
     }
   }
 
+  .rounded-blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morphBlob 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes morphBlob {
+    0% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 40% 60% 70% 30% / 50% 60% 30% 60%;
+    }
+    100% {
+      border-radius: 55% 45% 40% 60% / 45% 55% 60% 40%;
+    }
+  }
+
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
     opacity: 0;
@@ -318,6 +355,10 @@ import { siteConfig } from "../config";
 
   .animation-delay-200 {
     animation-delay: 0.2s;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
   }
 
   .animation-delay-400 {
